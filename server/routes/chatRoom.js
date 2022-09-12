@@ -7,9 +7,10 @@ const router = express.Router();
 router
   .get('/', chatRoom.getRecentConversation)
   .get('/:roomId', chatRoom.getConversationByRoomId)
-  .get('/roomname/:roomName', chatRoom.getConversationByRoomName)
   .post('/initiate', chatRoom.initiate)
+  .get('/chats', chatRoom.chats)
   .post('/:roomId/message', chatRoom.postMessage)
+  .post('/message/:messageId', chatRoom.replyMessage)
   .put('/:roomId/mark-read', chatRoom.markConversationReadByRoomId)
 
 export default router;
